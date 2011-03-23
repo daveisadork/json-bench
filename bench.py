@@ -18,15 +18,15 @@ if __name__ == "__main__":
     print "Finished in %0.2f seconds." % (finish_time - start_time)
     print "Creating JSON data from Python object using demjson:",
     start_time = time.time()
-    json_string = demjson.encode(python_obj)
+    json_string = demjson.encode(python_obj, strict=True)
     finish_time = time.time()
     print "Finished in %0.2f seconds." % (finish_time - start_time)
     del data
     print "Beginning main benchmarks at 10 iterations per operation:\n"
     for implementation in anyjson._modules:
         name = implementation[0]
-        if name == 'cjson':
-            continue
+#        if name == 'cjson':
+#            continue
         try:
             anyjson.force_implementation(name)
         except:
