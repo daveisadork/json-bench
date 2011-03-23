@@ -1,0 +1,2 @@
+Place a text file containing JSON named data.json in the same directory as
+bench.py and run bench.py.
